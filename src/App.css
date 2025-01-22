@@ -2,113 +2,98 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏮</text></svg>') repeat, linear-gradient(to bottom, #ffebee, #ffcdd2);
-  position: relative;
-  overflow: hidden;
+  background-color: #ffffff;
 }
 
 h1 {
-  color: #c62828;
+  color: #333;
   text-align: center;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: "STKaiti", "KaiTi", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.input-section {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .input-section input {
-  border: 2px solid #e57373;
-  background-color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
 }
 
 .input-section input:focus {
-  border-color: #c62828;
-  box-shadow: 0 0 8px rgba(198, 40, 40, 0.2);
+  border-color: #666;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .input-section button {
-  background-color: #c62828;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: "STKaiti", "KaiTi", serif;
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .input-section button:hover {
-  background-color: #b71c1c;
-  transform: translateY(-2px);
+  background-color: #444;
 }
 
-.name-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid #e57373;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.name-card::before {
-  content: '福';
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  font-size: 60px;
-  color: #c62828;
-  opacity: 0.1;
-  font-family: "STKaiti", "KaiTi", serif;
-  transform: rotate(30deg);
-}
-
-.name-card h2 {
-  color: #c62828;
-  font-family: "STKaiti", "KaiTi", serif;
-}
-
-.name-details strong {
-  color: #c62828;
-}
-
-@keyframes floatAnimation {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.name-card {
-  animation: floatAnimation 3s ease-in-out infinite;
+.input-section button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
 }
 
 .error-message {
-  color: #c62828;
-  background-color: rgba(255, 235, 238, 0.9);
-  padding: 0.5rem 1rem;
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 0.75rem;
   border-radius: 4px;
   margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
 .results-section {
+  width: 100%;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .name-card {
-  background: white;
+  background: #fff;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .name-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 .name-card h2 {
-  color: #2c3e50;
+  color: #333;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -120,7 +105,8 @@ h1 {
 }
 
 .name-details strong {
-  color: #2c3e50;
+  color: #333;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
@@ -128,7 +114,8 @@ h1 {
     flex-direction: column;
   }
 
-  input {
+  .input-section input,
+  .input-section button {
     width: 100%;
   }
 
