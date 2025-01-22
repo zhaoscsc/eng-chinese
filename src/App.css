@@ -8,48 +8,85 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏮</text></svg>') repeat, linear-gradient(to bottom, #ffebee, #ffcdd2);
+  position: relative;
+  overflow: hidden;
 }
 
 h1 {
-  color: #2c3e50;
+  color: #c62828;
   text-align: center;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "STKaiti", "KaiTi", serif;
 }
 
-.input-section {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: center;
+.input-section input {
+  border: 2px solid #e57373;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-input {
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: 2px solid #ddd;
+.input-section input:focus {
+  border-color: #c62828;
+  box-shadow: 0 0 8px rgba(198, 40, 40, 0.2);
+}
+
+.input-section button {
+  background-color: #c62828;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "STKaiti", "KaiTi", serif;
+}
+
+.input-section button:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+}
+
+.name-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #e57373;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.name-card::before {
+  content: '福';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 60px;
+  color: #c62828;
+  opacity: 0.1;
+  font-family: "STKaiti", "KaiTi", serif;
+  transform: rotate(30deg);
+}
+
+.name-card h2 {
+  color: #c62828;
+  font-family: "STKaiti", "KaiTi", serif;
+}
+
+.name-details strong {
+  color: #c62828;
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.name-card {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.error-message {
+  color: #c62828;
+  background-color: rgba(255, 235, 238, 0.9);
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  width: 300px;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #4a90e2;
-}
-
-button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #357abd;
+  margin-bottom: 1rem;
 }
 
 .results-section {
