@@ -8,7 +8,7 @@ interface ChineseNameResponse {
   culturalContext: string;
 }
 
-const API_KEY = 'ea555af5edf5411e808ec34680a12a08.DMfHklZbNJY1UO9a';
+const API_KEY = import.meta.env.VITE_API_KEY;
 const API_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
 
 const generatePrompt = (englishName: string) => {
