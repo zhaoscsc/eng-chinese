@@ -43,7 +43,7 @@ export const generateChineseName = async (englishName: string): Promise<ChineseN
       const response = await axios.post(
         API_URL,
         {
-          model: "glm-4",
+          model: "glm-4-flash",
           messages: [
             {
               role: "user",
